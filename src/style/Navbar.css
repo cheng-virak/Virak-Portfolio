@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@600&family=Poppins:wght@700&display=swap');
+.navbar {
+    background: #1f2937;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+.site-navbar {
+    min-height: 72px;
+    padding: 14px clamp(16px, 4vw, 40px);
+    gap: 16px;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    list-style: none;
+    gap: clamp(12px, 3vw, 34px);
+    margin: 0 0 0 auto;
+    padding: 0;
+}
+
+.nav-menu a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.nav-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.308);
+    color: #79899f;
+    transform: translateY(-2px);
+    transform: scale(1.05);
+}
+
+.nav-menu a.active {
+    background-color: rgba(255, 255, 255, 0.308);
+    color: #1f2937;
+    transform: scale(1.05);
+}
+
+.logo {
+    color: white;
+    font-weight: bold;
+    margin-right: 0;
+}
+
+/* --- Add this to your Navbar.css --- */
+
+/* Ensures icons inside links share the same color and transition as your text */
+.nav-menu a svg {
+    color: inherit; 
+    transition: all 0.3s ease;
+    vertical-align: middle; /* Centers the icon vertically with the text line */
+}
+
+/* Optional: If you want the icons to jump slightly on hover just like your text does */
+.nav-menu a:hover svg {
+    transform: translateY(-2px);
+}
+
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.logo-name {
+    font-size: clamp(1.35rem, 2vw, 1.65rem);
+}
+
+.logo-title {
+    font-size: clamp(0.9rem, 1.6vw, 1.1rem);
+    white-space: nowrap;
+}
+
+.logo-name {
+    
+    background: linear-gradient(135deg, #ffffff 30%, #b5c6e0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.logo-bracket {
+    font-family: 'Fira Code', monospace;
+    color: #61afef;
+    font-weight: 600;
+}
+
+.logo:hover {
+   
+}
+
+.logo:hover .logo-name {
+    background: linear-gradient(135deg, #61afef 0%, #ffffff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 991.98px) {
+    .navbar {
+        display: flex;
+        flex-direction: column; 
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .logo {
+        margin-right: 0; 
+        text-align: center;
+        width: 100%;
+        display: block;
+    }
+
+    .logo-title {
+        white-space: normal;
+        text-align: center;
+    }
+
+    .nav-menu {
+        justify-content: center;
+        width: 100%;
+        gap: 12px;
+        margin: 0;
+        flex-wrap: wrap;
+    }
+
+    .nav-menu a {
+        width: 44px;
+        height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+    }
+}
