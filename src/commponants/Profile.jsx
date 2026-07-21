@@ -15,7 +15,7 @@ function Profile() {
       />
 
       <h4>ITE Student at RUPP</h4>
-      <p>Web and App Developer</p>
+      <p>Frontend Developer</p>
     </div>
   );
 }

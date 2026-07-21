@@ -1,5 +1,7 @@
 import Profile from '../commponants/Profile';
 import '../style/Home.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function Home() {
     return (

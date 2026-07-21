@@ -1,10 +1,19 @@
+import Profile from '../commponants/Profile';
+import '../style/About.css';
 
 function About() {
     return (
-        <div className="page-section container text-center">
-            <h1>About Me</h1>
-            <p>This is the about page.</p>
-        </div>
+        <section className="about container">
+            <div className="page-section container text-center flex">
+                <div className="about-content">
+                    <h1>Cheng Virak</h1>
+                    <p>This is the about page.</p>
+                </div>
+                <div className="about-profile">
+                    <Profile />
+                </div>
+            </div>
+        </section>
     );
 }
 
