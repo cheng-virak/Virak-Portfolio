@@ -35,6 +35,45 @@ body {
     font-size: clamp(1rem, 2vw, 1.25rem);
 }
 
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 420px));
+    justify-content: center;
+    gap: 24px;
+}
+
+.card {
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 14px;
+    background: #2b3035;
+    color: white;
+    text-align: left;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: top;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-title {
+    margin: 0 0 8px;
+    font-size: 1.35rem;
+}
+
+.card-description {
+    margin: 0;
+    color: #d1d5db;
+}
+
 .footer {
     background-color: #1f2937;
     padding: 20px 16px;

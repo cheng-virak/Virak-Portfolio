@@ -1,4 +1,5 @@
 import Profile from '../commponants/Profile';
+import heroIllustration from '../assets/hero.png';
 import '../style/Home.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -19,6 +20,11 @@ function Home() {
             </div>
 
             <div className="home-profile">
+                <img
+                    src={heroIllustration}
+                    alt="Abstract technology illustration"
+                    className="home-illustration"
+                />
                 <Profile />
             </div>
         </section>
