@@ -20,11 +20,6 @@ function Home() {
             </div>
 
             <div className="home-profile">
-                <img
-                    src={heroIllustration}
-                    alt="Abstract technology illustration"
-                    className="home-illustration"
-                />
                 <Profile />
             </div>
         </section>
