@@ -1,8 +1,6 @@
 import Profile from '../commponants/Profile';
-import heroIllustration from '../assets/hero.png';
 import '../style/Home.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 
 function Home() {
     return (
@@ -20,6 +18,7 @@ function Home() {
             </div>
 
             <div className="home-profile">
+                {/* Removed heroIllustration here so it won't overlap */}
                 <Profile />
             </div>
         </section>
