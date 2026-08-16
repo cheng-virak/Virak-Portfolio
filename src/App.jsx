@@ -21,11 +21,6 @@ function ScrollToTop() {
 function App() {
   return (
     <div className="app-shell">
-      {/* Background ambient lighting effects */}
-      <div className="ambient-glow-1"></div>
-      <div className="ambient-glow-2"></div>
-      <div className="ambient-glow-3"></div>
-
       <ScrollToTop />
       <NavBar />
 

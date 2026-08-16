@@ -38,9 +38,9 @@ function Projects() {
     },
     {
       id: 3,
-      title: "Modern Glassmorphism Portfolio",
+      title: "Personal Developer Portfolio",
       category: "frontend",
-      description: "High-performance personal developer portfolio built with React 19, Vite, and a custom CSS glassmorphism design system with glowing micro-animations.",
+      description: "High-performance personal developer portfolio built with React 19, Vite, and a custom clean responsive CSS design system.",
       imageUrl: cShopImage,
       tags: ["React.js", "Vite", "Modern CSS", "SPA"],
       demoUrl: "#",

@@ -1,55 +1,54 @@
 /* ==========================================================================
-   SKILLS PAGE STYLES
+   SKILLS PAGE STYLES - CLEAN & NATURAL
    ========================================================================== */
 
 .skills-filter-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 40px;
+  margin-bottom: 32px;
 }
 
 .filter-pill-group {
   display: inline-flex;
   flex-wrap: wrap;
-  padding: 6px;
-  gap: 6px;
-  border-radius: var(--radius-full);
+  padding: 4px;
+  gap: 4px;
+  border-radius: var(--radius-sm);
   border: 1px solid var(--border-subtle);
-  background: rgba(15, 23, 42, 0.7);
+  background: var(--bg-card);
 }
 
 .filter-btn {
   background: transparent;
   border: none;
   color: var(--text-secondary);
-  font-weight: 600;
-  font-size: 0.9rem;
-  padding: 8px 18px;
-  border-radius: var(--radius-full);
+  font-weight: 500;
+  font-size: 0.85rem;
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: all var(--transition-normal);
+  transition: all var(--transition-fast);
 }
 
 .filter-btn:hover {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .filter-btn.active {
-  background: var(--accent-gradient);
+  background: #2563eb;
   color: #ffffff;
-  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.35);
 }
 
 /* Skills Interactive Grid */
 .skills-interactive-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 22px;
+  gap: 20px;
 }
 
 .skill-card {
-  padding: 24px;
+  padding: 20px;
   border-radius: var(--radius-md);
   display: flex;
   flex-direction: column;
@@ -58,20 +57,21 @@
 .skill-card-top {
   display: flex;
   align-items: center;
-  gap: 14px;
-  margin-bottom: 16px;
+  gap: 12px;
+  margin-bottom: 14px;
 }
 
 .skill-icon-wrap {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  border: 1px solid;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   flex-shrink: 0;
+  background: var(--bg-secondary);
 }
 
 .skill-meta {
@@ -79,43 +79,46 @@
 }
 
 .skill-name {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 700;
   margin: 0 0 2px;
+  color: var(--text-primary);
 }
 
 .skill-level-badge {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-family: var(--font-mono);
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
 }
 
 .skill-percent-text {
   font-family: var(--font-mono);
-  font-weight: 700;
-  font-size: 0.95rem;
+  font-weight: 600;
+  font-size: 0.9rem;
   color: var(--text-primary);
 }
 
 .skill-progress-track {
-  height: 6px;
+  height: 5px;
   width: 100%;
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--bg-secondary);
   border-radius: var(--radius-full);
   overflow: hidden;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
 .skill-progress-fill {
   height: 100%;
+  background: #2563eb;
   border-radius: var(--radius-full);
-  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: width 0.6s ease;
 }
 
 .skill-description {
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   color: var(--text-secondary);
   line-height: 1.5;
   margin: 0;
@@ -123,104 +126,108 @@
 
 /* Roadmap Section */
 .roadmap-section {
-  padding: 36px;
-  border-radius: var(--radius-lg);
+  padding: 28px;
+  border-radius: var(--radius-md);
   border: 1px solid var(--border-subtle);
+  background: var(--bg-card);
 }
 
 .section-desc-sub {
   color: var(--text-secondary);
-  font-size: 0.95rem;
-  margin-top: -6px;
-  margin-bottom: 24px;
+  font-size: 0.92rem;
+  margin-top: -4px;
+  margin-bottom: 20px;
 }
 
 .roadmap-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
 }
 
 .roadmap-card {
-  padding: 20px;
-  border-radius: var(--radius-md);
+  padding: 16px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
 }
 
 .roadmap-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .roadmap-icon {
-  font-size: 1.4rem;
+  font-size: 1.25rem;
 }
 
 .roadmap-badge {
-  padding: 2px 10px;
-  background: rgba(56, 189, 248, 0.12);
-  border: 1px solid rgba(56, 189, 248, 0.3);
+  padding: 2px 8px;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.25);
   color: var(--primary-cyan);
   border-radius: var(--radius-full);
-  font-size: 0.75rem;
-  font-weight: 600;
+  font-size: 0.72rem;
+  font-weight: 500;
 }
 
 .roadmap-title {
-  font-size: 1.05rem;
+  font-size: 0.98rem;
   font-weight: 700;
   margin-bottom: 2px;
+  color: var(--text-primary);
 }
 
 .roadmap-category {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--text-muted);
   font-family: var(--font-mono);
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
 .roadmap-progress-wrap {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .roadmap-progress-bar {
   flex: 1;
-  height: 5px;
-  background: rgba(255, 255, 255, 0.08);
+  height: 4px;
+  background: rgba(255, 255, 255, 0.06);
   border-radius: var(--radius-full);
   overflow: hidden;
 }
 
 .roadmap-progress-fill {
   height: 100%;
-  background: var(--accent-gradient);
+  background: #2563eb;
   border-radius: var(--radius-full);
 }
 
 .roadmap-percent {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-family: var(--font-mono);
   color: var(--text-secondary);
 }
 
 .skills-cta-text {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--text-primary);
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .roadmap-section {
-    padding: 24px 16px;
+    padding: 20px 14px;
   }
 
   .filter-pill-group {
-    border-radius: var(--radius-md);
     width: 100%;
     justify-content: center;
   }
 }
+
