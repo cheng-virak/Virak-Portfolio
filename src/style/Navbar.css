@@ -1,151 +1,264 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@600&family=Poppins:wght@700&display=swap');
-.navbar {
-    background: #1f2937;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    color: white;
+/* ==========================================================================
+   FLOATING GLASSMORPHISM NAVBAR
+   ========================================================================== */
+
+.navbar-wrapper {
+  position: sticky;
+  top: 16px;
+  z-index: 1000;
+  width: 100%;
+  transition: all var(--transition-normal);
+  padding: 0 12px;
 }
 
-.site-navbar {
-    min-height: 72px;
-    padding: 14px clamp(16px, 4vw, 40px);
-    gap: 16px;
+.navbar-scrolled {
+  top: 8px;
 }
 
-.nav-menu {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    list-style: none;
-    gap: clamp(12px, 3vw, 34px);
-    margin: 0 0 0 auto;
-    padding: 0;
+.glass-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 24px;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  transition: all var(--transition-normal);
 }
 
-.nav-menu a {
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 500;
-    padding: 8px 12px;
-    border-radius: 6px;
-    transition: all 0.3s ease;
+.navbar-scrolled .glass-navbar {
+  background: rgba(11, 15, 25, 0.9);
+  border-color: rgba(99, 102, 241, 0.25);
+  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.7), var(--glow-primary);
 }
 
-.nav-menu a:hover {
-    background-color: rgba(255, 255, 255, 0.308);
-    color: #79899f;
-    transform: translateY(-2px);
-    transform: scale(1.05);
+/* Brand Logo */
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
 }
 
-.nav-menu a.active {
-    background-color: rgba(255, 255, 255, 0.308);
-    color: #1f2937;
-    transform: scale(1.05);
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(99, 102, 241, 0.3));
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--primary-cyan);
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.25);
+  transition: all var(--transition-normal);
 }
 
-.logo {
-    color: white;
-    font-weight: bold;
-    margin-right: 0;
+.nav-brand:hover .logo-icon {
+  transform: rotate(-8deg) scale(1.08);
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+  border-color: var(--primary-indigo);
 }
 
-/* --- Add this to your Navbar.css --- */
-
-/* Ensures icons inside links share the same color and transition as your text */
-.nav-menu a svg {
-    color: inherit; 
-    transition: all 0.3s ease;
-    vertical-align: middle; /* Centers the icon vertically with the text line */
-}
-
-/* Optional: If you want the icons to jump slightly on hover just like your text does */
-.nav-menu a:hover svg {
-    transform: translateY(-2px);
-}
-
-
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease;
-}
-
-.logo-name {
-    font-size: clamp(1.35rem, 2vw, 1.65rem);
+.logo-text-group {
+  display: flex;
+  flex-direction: column;
 }
 
 .logo-title {
-    font-size: clamp(0.9rem, 1.6vw, 1.1rem);
-    white-space: nowrap;
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
 }
 
-.logo-name {
-    
-    background: linear-gradient(135deg, #ffffff 30%, #b5c6e0 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.logo-highlight {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.logo-bracket {
-    font-family: 'Fira Code', monospace;
-    color: #61afef;
-    font-weight: 600;
+.logo-subtitle {
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
-.logo:hover {
-   
+/* Desktop Navigation Links */
+.nav-links-desktop {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 4px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.04);
 }
 
-.logo:hover .logo-name {
-    background: linear-gradient(135deg, #61afef 0%, #ffffff 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.nav-item-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all var(--transition-normal);
 }
 
-@media (max-width: 991.98px) {
-    .navbar {
-        display: flex;
-        flex-direction: column; 
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-    }
+.nav-icon {
+  display: flex;
+  align-items: center;
+  opacity: 0.75;
+  transition: all var(--transition-normal);
+}
 
-    .logo {
-        margin-right: 0; 
-        text-align: center;
-        width: 100%;
-        display: block;
-    }
+.nav-item-link:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.07);
+}
 
-    .logo-title {
-        white-space: normal;
-        text-align: center;
-    }
+.nav-item-link:hover .nav-icon {
+  opacity: 1;
+  color: var(--primary-cyan);
+  transform: translateY(-1px);
+}
 
-    .nav-menu {
-        justify-content: center;
-        width: 100%;
-        gap: 12px;
-        margin: 0;
-        flex-wrap: wrap;
-    }
+.nav-item-link.active {
+  color: #ffffff;
+  font-weight: 600;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.18), rgba(99, 102, 241, 0.25));
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  box-shadow: 0 2px 12px rgba(99, 102, 241, 0.2);
+}
 
-    .nav-menu a {
-        width: 44px;
-        height: 44px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0;
-    }
+.nav-item-link.active .nav-icon {
+  color: var(--primary-cyan);
+  opacity: 1;
+}
+
+/* Right Actions */
+.nav-right-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Hamburger Button */
+.hamburger-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 38px;
+  height: 38px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  padding: 10px 8px;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.hamburger-btn span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: var(--text-primary);
+  border-radius: 2px;
+  transition: all var(--transition-normal);
+}
+
+.hamburger-btn.open span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.hamburger-btn.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-btn.open span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Mobile Drawer */
+.mobile-drawer {
+  margin-top: 12px;
+  padding: 18px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-glow);
+  box-shadow: var(--shadow-lg);
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobile-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all var(--transition-normal);
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+  background: linear-gradient(90deg, rgba(56, 189, 248, 0.15), rgba(99, 102, 241, 0.2));
+  color: #ffffff;
+  border-left: 3px solid var(--primary-cyan);
+}
+
+.mobile-drawer-footer {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  justify-content: center;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .nav-links-desktop {
+    display: none;
+  }
+
+  .hamburger-btn {
+    display: flex;
+  }
 }

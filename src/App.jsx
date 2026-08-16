@@ -1,4 +1,5 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import NavBar from './commponants/NavBar';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -8,24 +9,39 @@ import Contact from './pages/Contact';
 import Footer from './commponants/Footer';
 import './style/App.css';
 
-function App() {
-    return (
-        <div className="app-shell bg-dark text-light">
-            <NavBar />
-
-            <main className="app-main">
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/skills" element={<Skills />} />
-                    <Route path="/projects" element={<Projects />} />
-                    <Route path="/contact" element={<Contact />} />
-                </Routes>
-            </main>
-
-            <Footer />
-        </div>
-    );
+// Scroll to top automatically when route changes
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
 }
 
-export default App
+function App() {
+  return (
+    <div className="app-shell">
+      {/* Background ambient lighting effects */}
+      <div className="ambient-glow-1"></div>
+      <div className="ambient-glow-2"></div>
+      <div className="ambient-glow-3"></div>
+
+      <ScrollToTop />
+      <NavBar />
+
+      <main className="app-main">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/skills" element={<Skills />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </main>
+
+      <Footer />
+    </div>
+  );
+}
+
+export default App;

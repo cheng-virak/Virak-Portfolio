@@ -1,100 +1,299 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-.about-page {
-    padding-top: clamp(48px, 8vw, 96px);
-    padding-bottom: clamp(48px, 8vw, 96px);
+/* ==========================================================================
+   ABOUT PAGE STYLES
+   ========================================================================== */
+
+.about-page-container {
+  position: relative;
 }
 
-.hero-section {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 48px;
+/* About Hero Grid */
+.about-hero-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+  padding: 48px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
 }
 
-.hero-section > div:first-child {
-    max-width: 820px;
+.about-bio-col {
+  flex: 1;
+  max-width: 650px;
 }
 
-.hero-section h1 {
-    font-size: clamp(2.25rem, 5vw, 4rem);
-    line-height: 1.15;
-    margin: 16px 0 24px;
+.about-bio-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary-cyan);
+  margin-bottom: 16px;
 }
 
-.highlight { color: #0d6efd; }
-
-.pitch, .story-content p, .value-card p, .contact-section > p {
-    line-height: 1.65;
+.bio-headline {
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 18px;
 }
 
-.pitch { font-size: clamp(1.1rem, 2.6vw, 1.35rem); }
-
-.cta-buttons { margin-top: 24px; }
-
-.about-profile { flex: 0 0 280px; }
-
-.profile-card {
-    width: min(100%, 280px);
-    margin: 0 auto;
-    color: white;
-    text-align: left;
+.bio-lead {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  line-height: 1.6;
+  margin-bottom: 14px;
 }
 
-.profile-card img {
-    display: block;
+.bio-body {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 28px;
 }
 
-.profile-card h4 {
-    font-size: clamp(1.25rem, 2vw, 1.6rem);
-    line-height: 1.25;
-    margin-bottom: 12px;
+.bio-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
-.profile-card p { font-size: 1.1rem; line-height: 1.45; margin-bottom: 0; }
-
-.divider { margin: 48px 0; border-color: rgba(255, 255, 255, .2); }
-.section { margin-bottom: 48px; }
-.section h2, .contact-section h2 { margin-bottom: 20px; }
-.story-content { max-width: 900px; }
-.table-wrapper { overflow-x: auto; }
-.skills-table { width: 100%; border-collapse: collapse; }
-.skills-table th, .skills-table td { padding: 14px; border: 1px solid rgba(255, 255, 255, .2); text-align: left; }
-.skills-table th { background: rgba(13, 110, 253, .2); }
-.values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.value-card { padding: 24px; border: 1px solid rgba(255, 255, 255, .16); border-radius: 10px; background: rgba(255, 255, 255, .04); }
-.value-card h3 { font-size: 1.2rem; margin-bottom: 12px; }
-.contact-section { text-align: center; }
-.social-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; margin-top: 20px; }
-.contact-link { color: #9ec5fe; font-weight: 600; }
-.contact-link:hover { color: #fff; }
-
-@media (max-width: 991.98px) {
-    .hero-section {
-        flex-direction: column-reverse;
-        text-align: center;
-        gap: 28px;
-    }
-
-    .about-profile {
-        flex-basis: auto;
-        width: 100%;
-    }
-
-    .profile-card {
-        text-align: center;
-    }
-
-    .values-grid { grid-template-columns: 1fr; }
+.about-profile-col {
+  flex: 0 0 320px;
+  display: flex;
+  justify-content: center;
 }
 
-@media (max-width: 575.98px) {
-    .about-page {
-        padding-top: 36px;
-        padding-bottom: 44px;
-    }
+/* Section Header Compact */
+.section-header-compact {
+  margin-bottom: 28px;
+}
 
+.section-tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  color: var(--primary-cyan);
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+
+.section-heading {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 700;
+}
+
+/* Education Card */
+.education-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.education-card {
+  padding: 32px;
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--primary-cyan);
+}
+
+.edu-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.edu-icon-badge {
+  font-size: 1.8rem;
+  width: 48px;
+  height: 48px;
+  background: rgba(56, 189, 248, 0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edu-header-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.edu-status-pill {
+  padding: 4px 12px;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #34d399;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.edu-period {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.edu-degree {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.edu-institution {
+  font-size: 1.05rem;
+  color: var(--primary-cyan);
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.edu-desc {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Toolkit Matrix Grid */
+.toolkit-matrix-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.toolkit-group-card {
+  padding: 24px;
+  border-radius: var(--radius-md);
+}
+
+.group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.group-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.group-count {
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+}
+
+.group-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-pill {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.08);
+  transition: all var(--transition-fast);
+}
+
+.skill-pill:hover {
+  background: rgba(56, 189, 248, 0.15);
+  border-color: rgba(56, 189, 248, 0.4);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Principles Grid */
+.principles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+}
+
+.principle-card {
+  padding: 28px 24px;
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+}
+
+.principle-icon {
+  font-size: 2rem;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.principle-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.principle-description {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Connect Banner */
+.about-connect-banner {
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border: 1px solid var(--border-glow);
+  margin-top: 50px;
+}
+
+.banner-text h2 {
+  font-size: 1.5rem;
+  margin-bottom: 6px;
+}
+
+.banner-text p {
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .about-hero-grid {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 32px 20px;
+    gap: 36px;
+  }
+
+  .about-bio-col {
+    max-width: 100%;
+  }
+
+  .bio-ctas {
+    justify-content: center;
+  }
+
+  .about-connect-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 20px;
+  }
 }
