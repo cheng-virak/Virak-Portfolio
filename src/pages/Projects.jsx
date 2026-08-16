@@ -22,7 +22,7 @@ function Projects() {
       imageUrl: cShopImage,
       tags: ["React.js", "CSS3", "JavaScript", "Responsive UI"],
       demoUrl: "#",
-      githubUrl: "https://github.com/cheng-virak",
+      githubUrl: "https://github.com/cheng-virak/ShopWeb.git",
       featured: true
     },
     {
