@@ -74,9 +74,6 @@ function NavBar() {
         <nav className="glass-navbar">
           {/* Brand Logo */}
           <Link to="/" className="nav-brand">
-            <div className="logo-icon">
-              <span>&lt;/&gt;</span>
-            </div>
             <div className="logo-text-group">
               <span className="logo-title">Cheng <span className="logo-highlight">Virak</span></span>
               <span className="logo-subtitle">Software & Frontend</span>
