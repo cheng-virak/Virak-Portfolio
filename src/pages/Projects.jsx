@@ -10,7 +10,8 @@ function Projects() {
     { id: 'all', label: 'All Projects' },
     { id: 'frontend', label: 'Frontend & UI' },
     { id: 'fullstack', label: 'Fullstack & Backend' },
-    { id: 'academic', label: 'Engineering & CS' }
+    { id: 'academic', label: 'Engineering & CS' },
+    { id: 'team', label: '👥 Team Projects' }
   ];
 
   const projectList = [
@@ -21,17 +22,17 @@ function Projects() {
       description: "A modern responsive online fashion and clothing store interface with interactive product discovery, category filtering, cart overview, and promotional deal banners.",
       imageUrl: cShopImage,
       tags: ["React.js", "CSS3", "JavaScript", "Responsive UI"],
-      demoUrl: "#",
+      demoUrl: "https://cheng-virak.github.io/ShopWeb/",
       githubUrl: "https://github.com/cheng-virak/ShopWeb.git",
-      featured: true
+      featured: false
     },
     {
       id: 2,
-      title: "ITE Student & Academic Management System",
+      title: "Car Shop",
       category: "fullstack",
       description: "Database-backed student portal designed with PHP and MySQL to manage student records, course enrollment, grade calculations, and role-based administrative dashboards.",
       imageUrl: cShopImage,
-      tags: ["PHP", "MySQL", "Bootstrap 5", "Relational DB"],
+      tags: ["React", "MongoDB", "Bootstrap 5", "Relational DB"],
       demoUrl: "#",
       githubUrl: "https://github.com/cheng-virak",
       featured: false
@@ -56,7 +57,32 @@ function Projects() {
       tags: ["JavaScript", "Data Structures", "Algorithms", "Math"],
       demoUrl: "#",
       githubUrl: "https://github.com/cheng-virak",
-      featured: false
+      featured: false,
+      isTeamProject: false
+    },
+    {
+      id: 5,
+      title: "Team Project Title Here",
+      category: "team",
+      description: "A collaborative team project description goes here. Describe what the project does, the problem it solves, and what technologies your team used to build it.",
+      imageUrl: cShopImage,
+      tags: ["React.js", "Node.js", "MongoDB", "Team Build"],
+      demoUrl: "#",
+      githubUrl: "https://github.com/cheng-virak",
+      featured: false,
+      isTeamProject: true
+    },
+    {
+      id: 6,
+      title: "Another Team Project",
+      category: "team",
+      description: "Another collaborative project built with your teammates. Update this with the real project name, tech stack, and a brief overview of everyone's contributions.",
+      imageUrl: cShopImage,
+      tags: ["PHP", "MySQL", "Bootstrap", "Collaboration"],
+      demoUrl: "#",
+      githubUrl: "https://github.com/cheng-virak",
+      featured: false,
+      isTeamProject: true
     }
   ];
 
@@ -105,6 +131,7 @@ function Projects() {
               demoUrl={project.demoUrl}
               githubUrl={project.githubUrl}
               featured={project.featured}
+              isTeamProject={project.isTeamProject || false}
             />
           ))}
         </div>

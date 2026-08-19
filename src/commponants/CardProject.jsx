@@ -5,7 +5,8 @@ function CardProject({
   tags = ['React', 'CSS3', 'JavaScript'], 
   demoUrl = '#', 
   githubUrl = 'https://github.com/cheng-virak',
-  featured = false 
+  featured = false,
+  isTeamProject = false
 }) {
   const hasDemo = demoUrl && demoUrl !== '#';
 
@@ -13,6 +14,14 @@ function CardProject({
     <article className={`project-card ${featured ? 'project-card-featured' : ''}`}>
       <div className="project-banner">
         <img src={imageUrl} alt={title} className="project-img" loading="lazy" />
+        {isTeamProject && (
+          <span className="team-project-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/>
+            </svg>
+            Team Project
+          </span>
+        )}
       </div>
 
       <div className="project-body">
@@ -27,14 +36,16 @@ function CardProject({
 
         <div className="project-actions">
           {hasDemo && (
-            <a 
-              href={demoUrl} 
-              target="_blank" 
-              rel="noreferrer" 
-              className="project-btn project-btn-primary"
+            <a
+              href={demoUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="project-btn project-btn-live"
+              title="View live server"
             >
-              <span>Live Demo</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" viewBox="0 0 16 16">
+              <span className="live-dot" aria-hidden="true" />
+              <span>Live</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 16 16">
                 <path fillRule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
                 <path fillRule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
               </svg>
