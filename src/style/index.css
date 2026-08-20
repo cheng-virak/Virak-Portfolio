@@ -93,6 +93,7 @@
 [data-theme="light"] .gradient-text {
   background: linear-gradient(180deg, #0f172a 0%, #334155 60%, #64748b 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -276,6 +277,7 @@ a:hover {
 .gradient-text {
   background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 60%, #94a3b8 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
   font-weight: 800;
@@ -284,6 +286,7 @@ a:hover {
 .gradient-text-cyan {
   background: linear-gradient(180deg, #ffffff 0%, #e2e8f0 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
   font-weight: 800;
