@@ -5,19 +5,35 @@ import '../style/Home.css';
 function Home() {
   const highlights = [
     {
-      icon: '💻',
-      title: 'Frontend Engineering',
-      desc: 'Crafting responsive, pixel-perfect user interfaces with React, modern CSS, and JavaScript.'
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+          <rect width="20" height="14" x="2" y="3" rx="2" />
+          <line x1="8" x2="16" y1="21" y2="21" />
+          <line x1="12" x2="12" y1="17" y2="21" />
+        </svg>
+      ),
+      title: 'Frontend Development',
+      desc: 'Building responsive, accessible web interfaces using modern React, JavaScript (ES6+), and clean CSS.'
     },
     {
-      icon: '🗄️',
-      title: 'Backend & Database',
-      desc: 'Designing relational database schemas with MySQL, REST APIs, and PHP backend integration.'
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+          <ellipse cx="12" cy="5" rx="9" ry="3" />
+          <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+          <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3" />
+        </svg>
+      ),
+      title: 'Backend & Databases',
+      desc: 'Working with PHP, RESTful API endpoints, and structured relational database schemas with MySQL.'
     },
     {
-      icon: '⚡',
-      title: 'Performance & UX',
-      desc: 'Focusing on clean modular code, fast load times, accessible design, and smooth interactions.'
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+        </svg>
+      ),
+      title: 'Clean Code & Performance',
+      desc: 'Writing structured, maintainable code with Git version control and modern build tooling.'
     }
   ];
 
@@ -90,32 +106,27 @@ function Home() {
       {/* Hero Section */}
       <section className="home-hero-section container">
         <div className="home-hero-content">
-          <div className="hero-greeting-badge">
-            <span className="badge-glow-dot"></span>
-            <span>Frontend Developer & IT Engineer</span>
-          </div>
-
-          <h1 className="hero-headline">
+          <h1 className="hero-headline animate-fade-up">
             Hi, I'm <span className="gradient-text">Cheng Virak</span>
             <br />
-            Building <span className="gradient-text-cyan">Modern Web</span> Solutions.
+            Building practical web applications.
           </h1>
 
-          <p className="hero-description">
-            Information Technology Engineering student at the <strong>Royal University of Phnom Penh (RUPP)</strong>.
-            I turn complex ideas and design concepts into clean, high-performance, and user-centric web applications.
+          <p className="hero-description animate-fade-up delay-2">
+            IT Engineering student at the <strong>Royal University of Phnom Penh (RUPP)</strong>.
+            I focus on developing responsive frontend interfaces with React and structured backend solutions with PHP and MySQL.
           </p>
 
-          <div className="hero-action-buttons">
+          <div className="hero-action-buttons animate-fade-up delay-3">
             <Link to="/projects" className="btn-glow">
-              <span>Explore My Work</span>
+              <span>View Projects</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                 <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
               </svg>
             </Link>
 
             <Link to="/contact" className="btn-glass">
-              <span>Let's Talk</span>
+              <span>Get In Touch</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                 <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
               </svg>
@@ -127,7 +138,7 @@ function Home() {
           </div>
 
           {/* Quick tech stack icons */}
-          <div className="hero-tech-pills">
+          <div className="hero-tech-pills animate-fade-up delay-4">
             <span className="tech-pills-label">Tech Stack:</span>
             <div className="tech-icons-group">
               {techStack.map((tech, idx) => (
@@ -154,9 +165,9 @@ function Home() {
       {/* What I Do Highlights */}
       <section className="highlights-section container">
         <div className="section-title-wrap text-center">
-          <span className="page-subtitle-badge">Core Competencies</span>
-          <h2 className="section-title">What I Bring to the Table</h2>
-          <p className="section-subtitle">Combining solid software engineering principles with contemporary frontend design.</p>
+          <span className="page-subtitle-badge">Overview</span>
+          <h2 className="section-title">What I Do</h2>
+          <p className="section-subtitle">Focused on solid software engineering fundamentals and clean frontend development.</p>
         </div>
 
         <div className="highlights-grid">
@@ -174,14 +185,14 @@ function Home() {
       <section className="cta-banner-section container">
         <div className="cta-banner glass-panel">
           <div className="cta-content">
-            <h2 className="cta-title">Interested in collaborating or hiring?</h2>
+            <h2 className="cta-title">Looking for an intern or junior developer?</h2>
             <p className="cta-desc">
-              I'm actively seeking internship and junior engineering opportunities where I can contribute and grow.
+              I am open to internship and junior engineering opportunities in web and software development.
             </p>
           </div>
           <div className="cta-actions">
             <Link to="/contact" className="btn-glow">
-              <span>Get In Touch</span>
+              <span>Let's Talk</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                 <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
               </svg>

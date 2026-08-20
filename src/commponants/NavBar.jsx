@@ -3,9 +3,21 @@ import { Link, useLocation } from 'react-router-dom';
 import '../style/Navbar.css';
 
 function NavBar() {
-  const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem('portfolio-theme') || 'dark';
+  });
+  const location = useLocation();
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('portfolio-theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -69,85 +81,83 @@ function NavBar() {
   ];
 
   return (
-    <header className={`navbar-wrapper ${scrolled ? 'navbar-scrolled' : ''}`}>
-      <div className="container">
-        <nav className="glass-navbar">
-          {/* Brand Logo */}
-          <Link to="/" className="nav-brand">
-            <div className="logo-text-group">
-              <span className="logo-title">Cheng <span className="logo-highlight">Virak</span></span>
-              <span className="logo-subtitle">Software & Frontend</span>
-            </div>
-          </Link>
+    <>
+      {/* Top Navbar */}
+      <header className={`navbar-wrapper ${scrolled ? 'navbar-scrolled' : ''}`}>
+        <div className="container">
+          <nav className="minimal-navbar">
+            {/* Brand Logo */}
+            <Link to="/" className="nav-brand-clean">
+              <span className="brand-name">Cheng Virak</span>
+            </Link>
 
-          {/* Desktop Nav Items */}
-          <ul className="nav-links-desktop">
-            {navLinks.map((link) => {
-              const isActive = location.pathname === link.to;
-              return (
-                <li key={link.to}>
-                  <Link
-                    to={link.to}
-                    className={`nav-item-link ${isActive ? 'active' : ''}`}
-                  >
-                    <span className="nav-icon">{link.icon}</span>
-                    <span className="nav-label">{link.label}</span>
-                    {isActive && <span className="active-pill-indicator"></span>}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-
-          {/* Right Action / Status */}
-          <div className="nav-right-actions">
-            <div className="status-badge d-none d-md-inline-flex">
-              <span className="status-dot"></span>
-              <span>Available for hire</span>
-            </div>
-
-            {/* Mobile Hamburger Button */}
-            <button
-              className={`hamburger-btn ${mobileMenuOpen ? 'open' : ''}`}
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Toggle navigation menu"
-            >
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-          </div>
-        </nav>
-
-        {/* Mobile Dropdown Drawer */}
-        {mobileMenuOpen && (
-          <div className="mobile-drawer glass-panel">
-            <ul className="mobile-nav-list">
+            {/* Desktop Nav Items */}
+            <ul className="nav-links-clean">
               {navLinks.map((link) => {
                 const isActive = location.pathname === link.to;
                 return (
                   <li key={link.to}>
                     <Link
                       to={link.to}
-                      className={`mobile-nav-link ${isActive ? 'active' : ''}`}
+                      className={`clean-nav-link ${isActive ? 'active' : ''}`}
                     >
-                      <span className="nav-icon">{link.icon}</span>
                       <span>{link.label}</span>
                     </Link>
                   </li>
                 );
               })}
             </ul>
-            <div className="mobile-drawer-footer">
-              <div className="status-badge">
-                <span className="status-dot"></span>
-                <span>Available for hire</span>
-              </div>
+
+            {/* Right Actions: Theme Toggle */}
+            <div className="nav-right-actions">
+              <button
+                className="theme-toggle-icon-btn"
+                onClick={toggleTheme}
+                title={`Switch to ${theme === 'dark' ? 'Light' : 'Dark'} Mode`}
+                aria-label="Toggle dark and light mode"
+              >
+                {theme === 'dark' ? (
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="5"/>
+                    <line x1="12" y1="1" x2="12" y2="3"/>
+                    <line x1="12" y1="21" x2="12" y2="23"/>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                    <line x1="1" y1="12" x2="3" y2="12"/>
+                    <line x1="21" y1="12" x2="23" y2="12"/>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                  </svg>
+                ) : (
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                  </svg>
+                )}
+              </button>
             </div>
-          </div>
-        )}
-      </div>
-    </header>
+          </nav>
+        </div>
+      </header>
+
+      {/* Mobile Bottom Navigation Bar */}
+      <nav className="mobile-bottom-nav" aria-label="Mobile Navigation">
+        <div className="mobile-bottom-nav-inner">
+          {navLinks.map((link) => {
+            const isActive = location.pathname === link.to;
+            return (
+              <Link
+                key={link.to}
+                to={link.to}
+                className={`mobile-tab-item ${isActive ? 'active' : ''}`}
+              >
+                <span className="mobile-tab-icon">{link.icon}</span>
+                <span className="mobile-tab-label">{link.label}</span>
+              </Link>
+            );
+          })}
+        </div>
+      </nav>
+    </>
   );
 }
 

@@ -15,22 +15,46 @@ function About() {
 
   const engineeringPrinciples = [
     {
-      icon: '🔍',
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+          <circle cx="11" cy="11" r="8"/>
+          <line x1="21" x2="16.65" y1="21" y2="16.65"/>
+        </svg>
+      ),
       title: 'Root-Cause Problem Solving',
       description: 'I enjoy investigating beneath surface-level bugs—diving into server configurations, SQL query execution plans, and component life cycles to build robust solutions.'
     },
     {
-      icon: '📱',
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+          <rect width="14" height="20" x="5" y="2" rx="2" ry="2"/>
+          <line x1="12" x2="12.01" y1="18" y2="18"/>
+        </svg>
+      ),
       title: 'Responsive & Accessible UX',
       description: 'Crafting user interfaces that function seamlessly across all viewport sizes, keeping touch targets, typography hierarchy, and fast render times at the forefront.'
     },
     {
-      icon: '🔄',
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+          <line x1="6" x2="6" y1="3" y2="15"/>
+          <circle cx="18" cy="6" r="3"/>
+          <circle cx="6" cy="18" r="3"/>
+          <path d="M18 9a9 9 0 0 1-9 9"/>
+        </svg>
+      ),
       title: 'Git Version Control & Clean Code',
       description: 'Committed to atomic git commits, structured branching, clean code conventions, and modular component architecture ready for team scale.'
     },
     {
-      icon: '🚀',
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+          <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+          <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+          <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
+          <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+        </svg>
+      ),
       title: 'Continuous Tech Exploration',
       description: 'Constantly testing new web frameworks and modern backend tooling to stay ahead with industry best practices and high-efficiency tooling.'
     }
@@ -139,35 +163,35 @@ function About() {
     <div className="about-page-container page-wrapper">
       <div className="container">
         {/* Header */}
-        <div className="page-header">
-          <span className="page-subtitle-badge">About Me</span>
+        <div className="page-header animate-fade-up">
+          <span className="page-subtitle-badge">Background</span>
           <h1 className="page-title">
-            Engineering Software with <span className="gradient-text">Precision</span> & Passion
+            About <span className="gradient-text">Me</span>
           </h1>
           <p className="page-description">
-            Get to know my academic background, technical journey, core philosophy, and what drives my development workflow.
+            Information Technology Engineering student at the Royal University of Phnom Penh (RUPP).
           </p>
         </div>
 
         {/* Hero Story Section */}
-        <section className="about-hero-grid glass-panel mb-5">
+        <section className="about-hero-grid glass-panel mb-5 animate-fade-up delay-1">
           <div className="about-bio-col">
             
             <h2 className="bio-headline">
-              I'm <span className="gradient-text-cyan">Cheng Virak</span>, an IT Engineering student & Frontend Developer.
+              Hi, I'm <span className="gradient-text">Cheng Virak</span>.
             </h2>
             <p className="bio-lead">
-              Currently pursuing my degree at the Royal University of Phnom Penh (RUPP), I combine systematic engineering principles with a passion for sleek, interactive web interfaces.
+              I am currently pursuing my degree in Information Technology Engineering at the Royal University of Phnom Penh (RUPP).
             </p>
             <p className="bio-body">
-              My journey started with curiosity about how complex software works under the hood. From designing relational MySQL databases and writing clean PHP endpoints, I have expanded into modern full-stack web applications using React.js and Vite.
+              I enjoy building clean, functional web applications. My coursework and self-directed projects span frontend development with React, backend integration with PHP, and database design with MySQL.
             </p>
             <div className="bio-ctas">
               <Link to="/projects" className="btn-glow">
-                <span>View My Projects</span>
+                <span>View Projects</span>
               </Link>
               <Link to="/contact" className="btn-glass">
-                <span>Let's Connect</span>
+                <span>Contact Me</span>
               </Link>
             </div>
           </div>
@@ -188,7 +212,12 @@ function About() {
             {educationItems.map((edu, idx) => (
               <div key={idx} className="education-card glass-card">
                 <div className="edu-top">
-                  <div className="edu-icon-badge">🎓</div>
+                  <div className="edu-icon-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                      <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917z"/>
+                      <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.534z"/>
+                    </svg>
+                  </div>
                   <div className="edu-header-meta">
                     <span className="edu-status-pill">{edu.status}</span>
                     <span className="edu-period">{edu.period}</span>

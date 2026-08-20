@@ -21,15 +21,11 @@ function ScrollToTop() {
 function App() {
   return (
     <div className="app-shell">
-      {/* Animated background layers */}
+      {/* Clean ambient background */}
       <div className="bg-canvas" aria-hidden="true">
-        <div className="bg-orb bg-orb--1" />
-        <div className="bg-orb bg-orb--2" />
-        <div className="bg-orb bg-orb--3" />
-        <div className="bg-spotlight" />
-        <div className="bg-light-streak" />
+        <div className="bg-ambient-glow bg-ambient-top" />
+        <div className="bg-ambient-glow bg-ambient-bottom" />
         <div className="bg-grid" />
-        <div className="bg-grain" />
       </div>
 
       <ScrollToTop />
