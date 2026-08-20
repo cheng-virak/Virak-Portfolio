@@ -19,7 +19,7 @@
 
 .home-hero-content {
   flex: 1;
-  max-width: 660px;
+  max-width: 640px;
 }
 
 .hero-greeting-badge {
@@ -36,6 +36,12 @@
   margin-bottom: 18px;
 }
 
+[data-theme="light"] .hero-greeting-badge {
+  background: rgba(16, 185, 129, 0.08);
+  border-color: rgba(16, 185, 129, 0.25);
+  color: #059669;
+}
+
 .badge-glow-dot {
   width: 8px;
   height: 8px;
@@ -45,7 +51,7 @@
 }
 
 .hero-headline {
-  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
   font-weight: 800;
   line-height: 1.18;
   letter-spacing: -0.025em;
@@ -54,7 +60,7 @@
 }
 
 .hero-description {
-  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  font-size: clamp(1rem, 1.6vw, 1.12rem);
   color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 28px;
@@ -367,19 +373,47 @@
 
 /* Responsive */
 @media (max-width: 991px) {
+  .home-page-container {
+    padding-bottom: 90px;
+  }
+
   .home-hero-section {
-    flex-direction: column-reverse;
+    flex-direction: column;
     text-align: center;
-    gap: 36px;
+    gap: 20px;
     padding-top: 24px;
+    padding-bottom: 36px;
   }
 
   .home-hero-content {
     max-width: 100%;
   }
 
+  .home-hero-profile {
+    display: none;
+  }
+
+  .hero-greeting-badge {
+    margin: 0 auto 16px;
+  }
+
+  .hero-headline {
+    font-size: clamp(1.8rem, 5vw, 2.4rem);
+    line-height: 1.22;
+    margin-bottom: 14px;
+  }
+
+  .hero-description {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin: 0 auto 22px;
+    max-width: 580px;
+  }
+
   .hero-action-buttons {
     justify-content: center;
+    gap: 10px;
+    margin-bottom: 22px;
   }
 
   .hero-tech-pills {
@@ -390,6 +424,74 @@
     flex-direction: column;
     text-align: center;
     padding: 28px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-headline {
+    font-size: 1.7rem;
+    line-height: 1.25;
+    margin-bottom: 12px;
+  }
+
+  .hero-description {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    margin-bottom: 20px;
+  }
+
+  .hero-action-buttons {
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .hero-action-buttons .btn-glow,
+  .hero-action-buttons .btn-glass {
+    padding: 8px 16px;
+    font-size: 0.84rem;
+  }
+
+  .tech-icon-badge {
+    width: 34px;
+    height: 34px;
+  }
+
+  .tech-icon-badge svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .highlights-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .highlight-card {
+    padding: 16px 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-headline {
+    font-size: 1.45rem;
+  }
+
+  .hero-description {
+    font-size: 0.82rem;
+  }
+
+  .hero-action-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 6px;
+  }
+
+  .hero-action-buttons .btn-glow,
+  .hero-action-buttons .btn-glass {
+    width: 100%;
+    justify-content: center;
+    padding: 8px 12px;
+    font-size: 0.82rem;
   }
 }
 

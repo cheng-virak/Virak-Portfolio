@@ -157,7 +157,7 @@ function Home() {
           </div>
         </div>
 
-        <div className="home-hero-profile">
+        <div className="home-hero-profile animate-fade-up delay-2">
           <Profile />
         </div>
       </section>

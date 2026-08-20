@@ -6,67 +6,154 @@
   position: relative;
 }
 
-/* About Hero Grid */
+/* About Hero Integrated Card */
 .about-hero-grid {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 36px;
-  padding: 36px;
+  flex-direction: column;
+  gap: 22px;
+  padding: 32px;
   border-radius: var(--radius-md);
   border: 1px solid var(--border-subtle);
   background: var(--bg-card);
 }
 
-.about-bio-col {
-  flex: 1;
-  max-width: 620px;
+.about-hero-profile-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border-subtle);
 }
 
-.about-bio-badge {
-  display: inline-block;
-  padding: 4px 12px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+.about-avatar-wrapper {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  min-width: 72px;
+  border-radius: 50%;
+  border: 2px solid var(--border-medium);
+  box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
+}
+
+.about-avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.about-avatar-dot {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #10b981;
+  border: 2px solid var(--bg-card);
+  box-shadow: 0 0 8px #10b981;
+}
+
+.about-identity-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.about-badge-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.about-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.28);
+  color: #10b981;
   border-radius: var(--radius-full);
-  font-size: 0.8rem;
-  font-weight: 500;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.about-location-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
   color: var(--text-secondary);
-  margin-bottom: 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+}
+
+[data-theme="light"] .about-location-pill {
+  background: rgba(0, 0, 0, 0.03);
+  color: #475569;
+}
+
+.about-name {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0 0 2px;
+  line-height: 1.25;
+}
+
+.about-role {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin: 0;
+  font-weight: 500;
+}
+
+.about-bio-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .bio-headline {
-  font-size: clamp(1.5rem, 2.5vw, 2rem);
-  font-weight: 800;
-  line-height: 1.25;
-  margin-bottom: 14px;
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
+  font-weight: 700;
+  line-height: 1.35;
   color: var(--text-primary);
+  margin: 0;
 }
 
 .bio-lead {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: var(--text-primary);
   line-height: 1.6;
-  margin-bottom: 12px;
+  margin: 0;
 }
 
 .bio-body {
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   color: var(--text-secondary);
   line-height: 1.6;
-  margin-bottom: 24px;
+  margin: 0;
+}
+
+.about-quick-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 4px 0 8px;
 }
 
 .bio-ctas {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-}
-
-.about-profile-col {
-  flex: 0 0 280px;
-  display: flex;
-  justify-content: center;
+  gap: 10px;
+  margin-top: 4px;
 }
 
 /* Section Header Compact */
@@ -317,26 +404,272 @@
 }
 
 /* Responsive */
-@media (max-width: 991px) {
+@media (max-width: 768px) {
   .about-hero-grid {
-    flex-direction: column-reverse;
-    text-align: center;
-    padding: 24px 18px;
-    gap: 28px;
+    padding: 20px 16px;
+    gap: 18px;
   }
 
-  .about-bio-col {
-    max-width: 100%;
+  .about-hero-profile-header {
+    gap: 14px;
+    padding-bottom: 14px;
+  }
+
+  .about-avatar-wrapper {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+  }
+
+  .about-name {
+    font-size: 1.15rem;
+  }
+
+  .about-role {
+    font-size: 0.8rem;
+  }
+
+  .bio-headline {
+    font-size: 1.05rem;
+    line-height: 1.35;
+  }
+
+  .bio-lead {
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  .bio-body {
+    font-size: 0.84rem;
+    line-height: 1.5;
   }
 
   .bio-ctas {
-    justify-content: center;
+    gap: 8px;
+  }
+
+  .bio-ctas .btn-glow,
+  .bio-ctas .btn-glass {
+    padding: 8px 16px;
+    font-size: 0.84rem;
+  }
+
+  /* Toolkit Matrix 2-Col */
+  .toolkit-matrix-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .toolkit-group-card {
+    padding: 12px 10px;
+  }
+
+  .group-header {
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+  }
+
+  .group-title {
+    font-size: 0.88rem;
+  }
+
+  .group-count {
+    font-size: 0.65rem;
+  }
+
+  .group-pills {
+    gap: 4px;
+  }
+
+  .skill-icon-pill {
+    padding: 3px 7px;
+    font-size: 0.72rem;
+    gap: 4px;
+  }
+
+  .skill-pill-icon svg {
+    width: 13px;
+    height: 13px;
+  }
+
+  /* Principles 2-Col */
+  .principles-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .principle-card {
+    padding: 14px 12px;
+  }
+
+  .principle-icon {
+    width: 34px;
+    height: 34px;
+    margin-bottom: 8px;
+  }
+
+  .principle-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .principle-title {
+    font-size: 0.88rem;
+    line-height: 1.25;
+    margin-bottom: 4px;
+  }
+
+  .principle-description {
+    font-size: 0.76rem;
+    line-height: 1.38;
   }
 
   .about-connect-banner {
     flex-direction: column;
     text-align: center;
     padding: 24px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero-grid {
+    padding: 16px 12px;
+    gap: 14px;
+  }
+
+  .about-hero-profile-header {
+    gap: 12px;
+    padding-bottom: 12px;
+  }
+
+  .about-avatar-wrapper {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+  }
+
+  .about-badge-row {
+    gap: 5px;
+    margin-bottom: 4px;
+  }
+
+  .about-status-pill,
+  .about-location-pill {
+    font-size: 0.68rem;
+    padding: 2px 7px;
+  }
+
+  .about-name {
+    font-size: 1.05rem;
+  }
+
+  .about-role {
+    font-size: 0.76rem;
+  }
+
+  .bio-headline {
+    font-size: 0.95rem;
+  }
+
+  .bio-lead,
+  .bio-body {
+    font-size: 0.8rem;
+    line-height: 1.45;
+  }
+
+  .about-quick-tags {
+    gap: 4px;
+    margin: 2px 0 6px;
+  }
+
+  .about-quick-tags .tech-tag {
+    font-size: 0.65rem;
+    padding: 2px 6px;
+  }
+
+  .bio-ctas {
+    flex-direction: column;
+    width: 100%;
+    gap: 6px;
+  }
+
+  .bio-ctas .btn-glow,
+  .bio-ctas .btn-glass {
+    width: 100%;
+    justify-content: center;
+    padding: 7px 12px;
+    font-size: 0.8rem;
+  }
+
+  /* Toolkit Matrix 2-Col on small mobile */
+  .toolkit-matrix-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .toolkit-group-card {
+    padding: 10px 8px;
+  }
+
+  .group-header {
+    margin-bottom: 6px;
+    padding-bottom: 5px;
+  }
+
+  .group-title {
+    font-size: 0.8rem;
+  }
+
+  .group-count {
+    font-size: 0.6rem;
+  }
+
+  .group-pills {
+    gap: 3px;
+  }
+
+  .skill-icon-pill {
+    padding: 2px 5px;
+    font-size: 0.66rem;
+    gap: 3px;
+    border-radius: 4px;
+  }
+
+  .skill-pill-icon svg {
+    width: 11px;
+    height: 11px;
+  }
+
+  /* Principles 2-Col on small mobile */
+  .principles-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .principle-card {
+    padding: 10px 8px;
+  }
+
+  .principle-icon {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 6px;
+  }
+
+  .principle-icon svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .principle-title {
+    font-size: 0.78rem;
+    line-height: 1.2;
+    margin-bottom: 3px;
+  }
+
+  .principle-description {
+    font-size: 0.7rem;
+    line-height: 1.3;
   }
 }
 

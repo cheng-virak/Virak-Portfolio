@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import Profile from '../commponants/Profile';
+import profilePic from '../assets/profile.jpg';
 import '../style/About.css';
 
 function About() {
@@ -175,29 +175,58 @@ function About() {
 
         {/* Hero Story Section */}
         <section className="about-hero-grid glass-panel mb-5 animate-fade-up delay-1">
-          <div className="about-bio-col">
-            
-            <h2 className="bio-headline">
-              Hi, I'm <span className="gradient-text">Cheng Virak</span>.
-            </h2>
+          <div className="about-hero-profile-header">
+            <div className="about-avatar-wrapper">
+              <img src={profilePic} alt="Cheng Virak" className="about-avatar-img" />
+              <span className="about-avatar-dot" title="Available for opportunities"></span>
+            </div>
+            <div className="about-identity-info">
+              <div className="about-badge-row">
+                <span className="about-status-pill">
+                  <span className="live-dot"></span> Open to Opportunities
+                </span>
+                <span className="about-location-pill">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                  </svg>
+                  Phnom Penh, Cambodia
+                </span>
+              </div>
+              <h2 className="about-name">Cheng Virak</h2>
+              <p className="about-role">IT Engineering Student & Full-Stack Developer</p>
+            </div>
+          </div>
+
+          <div className="about-bio-content">
+            <h3 className="bio-headline">
+              Crafting responsive web applications with <span className="gradient-text">engineering precision</span>.
+            </h3>
             <p className="bio-lead">
-              I am currently pursuing my degree in Information Technology Engineering at the Royal University of Phnom Penh (RUPP).
+              Currently pursuing my Bachelor's degree in Information Technology Engineering at the <strong>Royal University of Phnom Penh (RUPP)</strong>.
             </p>
             <p className="bio-body">
-              I enjoy building clean, functional web applications. My coursework and self-directed projects span frontend development with React, backend integration with PHP, and database design with MySQL.
+              I enjoy building clean, functional web applications. My coursework and self-directed projects span frontend development with React, backend integration with PHP, and structured database design with MySQL.
             </p>
+
+            <div className="about-quick-tags">
+              <span className="tech-tag">React.js</span>
+              <span className="tech-tag">JavaScript ES6+</span>
+              <span className="tech-tag">PHP</span>
+              <span className="tech-tag">MySQL</span>
+              <span className="tech-tag">Git & GitHub</span>
+            </div>
+
             <div className="bio-ctas">
               <Link to="/projects" className="btn-glow">
                 <span>View Projects</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+                  <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+                </svg>
               </Link>
               <Link to="/contact" className="btn-glass">
                 <span>Contact Me</span>
               </Link>
             </div>
-          </div>
-
-          <div className="about-profile-col">
-            <Profile />
           </div>
         </section>
 
