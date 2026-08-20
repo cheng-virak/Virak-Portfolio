@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import CardProject from "../commponants/CardProject";
 import cShopImage from '../assets/image.png';
+import autocarShop from '../assets/car-shop.png';
+import Portfolio from '../assets/Portfolio.png';
+import LAF from '../assets/lostandfound.png';
 import '../style/Projects.css';
 
 function Projects() {
@@ -28,62 +31,39 @@ function Projects() {
     },
     {
       id: 2,
-      title: "Car Shop",
-      category: "fullstack",
-      description: "Database-backed student portal designed with PHP and MySQL to manage student records, course enrollment, grade calculations, and role-based administrative dashboards.",
-      imageUrl: cShopImage,
-      tags: ["React", "MongoDB", "Bootstrap 5", "Relational DB"],
-      demoUrl: "#",
-      githubUrl: "https://github.com/cheng-virak",
-      featured: false
-    },
-    {
-      id: 3,
       title: "Personal Developer Portfolio",
       category: "frontend",
       description: "High-performance personal developer portfolio built with React 19, Vite, and a custom clean responsive CSS design system.",
-      imageUrl: cShopImage,
+      imageUrl: Portfolio,
       tags: ["React.js", "Vite", "Modern CSS", "SPA"],
       demoUrl: "#",
-      githubUrl: "https://github.com/cheng-virak",
-      featured: false
+      githubUrl: "https://github.com/cheng-virak/Virak-Portfolio.git",
+      featured: false,
+    },
+    {
+      id: 3,
+      title: "Car Shop E-commerce",
+      category: "fullstack",
+      description: "Car shop e-commerce is a web application that helps people buy and sell cars.",
+      imageUrl: autocarShop,
+      tags: ["React.js", "Railway", "Bootstrap 5", "Relational DB"],
+      demoUrl: "https://shop.rachhy.online/",
+      githubUrl: "https://github.com/sothunrachhy/henghuy-autocars.git",
+      featured: false,
+      isTeamProject: true
     },
     {
       id: 4,
-      title: "Cryptographic & Algorithm Visualizer",
-      category: "academic",
-      description: "Interactive visual tool developed for ITE coursework to demonstrate cryptographic algorithms (ciphers, hashing, modular arithmetic, and asymmetric key logic).",
-      imageUrl: cShopImage,
-      tags: ["JavaScript", "Data Structures", "Algorithms", "Math"],
-      demoUrl: "#",
-      githubUrl: "https://github.com/cheng-virak",
-      featured: false,
-      isTeamProject: false
-    },
-    {
-      id: 5,
-      title: "Team Project Title Here",
-      category: "team",
-      description: "A collaborative team project description goes here. Describe what the project does, the problem it solves, and what technologies your team used to build it.",
-      imageUrl: cShopImage,
+      title: "Lost And Found project",
+      category: "fullstack",
+      description: "Lost and Found is a web application that helps people find lost and found items.",
+      imageUrl: LAF,
       tags: ["React.js", "Node.js", "MongoDB", "Team Build"],
-      demoUrl: "#",
-      githubUrl: "https://github.com/cheng-virak",
+      demoUrl: "https://www.lostfound.wtf/",
+      githubUrl: "https://github.com/sothunrachhy/lostandfound.git",
       featured: false,
       isTeamProject: true
     },
-    {
-      id: 6,
-      title: "Another Team Project",
-      category: "team",
-      description: "Another collaborative project built with your teammates. Update this with the real project name, tech stack, and a brief overview of everyone's contributions.",
-      imageUrl: cShopImage,
-      tags: ["PHP", "MySQL", "Bootstrap", "Collaboration"],
-      demoUrl: "#",
-      githubUrl: "https://github.com/cheng-virak",
-      featured: false,
-      isTeamProject: true
-    }
   ];
 
   const filteredProjects = activeCategory === 'all'

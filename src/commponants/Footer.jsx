@@ -52,12 +52,7 @@ function Footer() {
                 </a>
               </li>
               <li>
-                <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="social-pill-link">
-                  <span>💼 LinkedIn</span>
-                </a>
-              </li>
-              <li>
-                <a href="https://t.me" target="_blank" rel="noreferrer" className="social-pill-link">
+                <a href="https://t.me/rakkkk222" target="_blank" rel="noreferrer" className="social-pill-link">
                   <span>✈️ Telegram</span>
                 </a>
               </li>

@@ -57,14 +57,6 @@ function Contact() {
       isButton: false
     },
     {
-      icon: '💼',
-      title: 'LinkedIn',
-      value: 'linkedin.com/in/cheng-virak',
-      actionText: 'Connect',
-      link: 'https://linkedin.com',
-      isButton: false
-    },
-    {
       icon: '📍',
       title: 'Location',
       value: 'Phnom Penh, Cambodia (RUPP)',
