@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import CardProject from "../commponants/CardProject";
-import cShopImage from '../assets/image.png';
+import cShopImage from '../assets/image_copy.png';
 import autocarShop from '../assets/car-shop.png';
 import Portfolio from '../assets/Portfolio.png';
 import LAF from '../assets/lostandfound.png';
